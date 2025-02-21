@@ -75,3 +75,14 @@ cat <<'EOF' > $my_dir/config/config.env
 ASSIGNMENT="Shell Navigation"
 DAYS_REMAINING=2
 EOF
+
+# Creating a startup.sh file: No.4
+cat <<EOF > $my_dir/startup.sh
+#!/usr/bin/env bash
+cd $my_dir
+bash app/reminder.sh
+EOF
+
+# Execution permissions to startup.sh
+chmod u+x $my_dir/startup.sh
+bash $my_dir/startup.sh     #Executing this startup.sh will in turn execute reminder.sh
